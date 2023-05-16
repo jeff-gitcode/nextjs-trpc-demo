@@ -4,7 +4,8 @@
 
 ## Tech Stack
 - [x] nextjs
-- [x] tailwindcss
+- [x] express
+- [x] styled-component
 - [x] nx monorepo
 - [x] cypress/storybook
 - [ ] trpc
@@ -16,8 +17,16 @@ $ npx create-nx-workspace@latest nextjs-trpc-demo --package-manager=yarn
 ✔ Choose what to create                 · integrated
 ✔ What to create in the new workspace   · next
 ✔ Application name                      · nextapp
-✔ Default stylesheet format             · scss
+✔ Default stylesheet format             · styled-components
 ✔ Enable distributed caching to make your CI faster · No
+
+ >  NX   Creating your v16.1.4 workspace.
+
+   To make sure the command works reliably in all environments, and that the preset is applied correctly,
+   Nx will run "yarn install" several times. Please wait.
+
+✔ Installing dependencies with yarn
+✔ Successfully created the workspace: nextjs-trpc-demo.
 
 $ cd nextjs-trpc-demo
 $ yarn add -D @nx/next -W
@@ -30,16 +39,25 @@ $ yarn add -D @nx/storybook
 
 $ yarn add -D @storybook/addon-styling
 
-nx g @nx/storybook:configuration project-name
-# generate next page
-$ npx nx generate @nx/next:page --name=about --style=css
+$ nx g @nx/next:storybook-configuration nextapp 
 
-# tailwind
-$ yarn add -D tailwindcss postcss autoprefixer
+# express
+$ yarn add -D @nx/express
 
-$ npx tailwindcss init -p
+$ nx g @nx/express:app expressapp
 
+# trpc
+$ cd nextjs-trpc-demo/apps/expressapp
+$ yarn add @trpc/server @trpc/client
 
+# zod
+$ yarn add zod
+
+# husky
+$ yarn add husky
+
+# lowdb
+$ yarn add lowdb
 ```
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>

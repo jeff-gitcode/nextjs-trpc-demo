@@ -8,7 +8,8 @@
 - [x] styled-component
 - [x] nx monorepo
 - [x] cypress/storybook
-- [ ] trpc
+- [ ] trpc/zob
+- [ ] lowdb
 
 ````javascript
 $ npx create-nx-workspace@latest nextjs-trpc-demo --package-manager=yarn

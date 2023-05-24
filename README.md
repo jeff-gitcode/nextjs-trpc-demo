@@ -51,6 +51,10 @@ $ nx g @nx/express:app expressapp
 $ cd nextjs-trpc-demo/apps/expressapp
 $ yarn add @trpc/server @trpc/client
 
+# nextapp
+$ cd nextjs-trpc-demo/apps/nextapp
+$ yarn add @trpc/server @trpc/client @trpc/react-query @trpc/next @tanstack/react-query zod
+
 # zod
 $ yarn add zod
 
